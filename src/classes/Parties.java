@@ -1,27 +1,28 @@
 package classes;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Parties {
-    private ArrayList<Character> party;
-    private ArrayList<Character> graveyard;
+    private List<Character> party;
+    private List<Character> graveyard;
 
 
 
     //Constructor - Crea una party desde una lista de personajes
 
-    public Parties(ArrayList<Character> party) {
+    public Parties(List<Character> party) {
         setParty(party);
     }
     //Genera una party aleatoria entre 10 y 20
-    public ArrayList<Character> generateParty(){
+    public List<Character> generateParty(){
        int lengthParty = ThreadLocalRandom.current().nextInt(10,20);
         for (int i = 0; i < lengthParty; i++) {
             if(ThreadLocalRandom.current().nextBoolean() == true){
-                party.add(Warrior.randomWarrior);
+                party.add(Warrior.random);
             }else{
-                party.add(Wizzard.randomWizzard);
+                party.add(Wizard.random);
             }
         }
         return party;
@@ -32,7 +33,7 @@ public class Parties {
         party.remove(index);
     }
     //añade un personaje en la ultima posicion
-    public void addNewCharacter(Character character){
+    public void addNewCharacter(Cgitharacter character){
         party.add(character);
     }
     //el metodo esta sobrecargado para que añada a un character en un determinado indice
@@ -49,14 +50,14 @@ public class Parties {
         party.remove(index);
     }
     //getter
-    public ArrayList<Character> getGraveyard() {
+    public List<Character> getGraveyard() {
         return graveyard;
     }
-    public ArrayList<Character> getParty() {
+    public List<Character> getParty() {
         return party;
     }
     //Setter
-    public void setParty(ArrayList<Character> party) {
+    public void setParty(List<Character> party) {
         this.party = party;
     }
 }
