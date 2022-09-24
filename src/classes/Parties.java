@@ -18,7 +18,7 @@ public class Parties {
     public ArrayList<Character> generateParty(){
        int lengthParty = ThreadLocalRandom.current().nextInt(10,20);
         for (int i = 0; i < lengthParty; i++) {
-            if(Math.random() == 0.0){
+            if(ThreadLocalRandom.current().nextBoolean() == true){
                 party.add(Warrior.randomWarrior);
             }else{
                 party.add(Wizzard.randomWizzard);
