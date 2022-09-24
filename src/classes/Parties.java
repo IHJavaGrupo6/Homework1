@@ -33,7 +33,7 @@ public class Parties {
         party.remove(index);
     }
     //añade un personaje en la ultima posicion
-    public void addNewCharacter(Cgitharacter character){
+    public void addNewCharacter(Character character){
         party.add(character);
     }
     //el metodo esta sobrecargado para que añada a un character en un determinado indice
