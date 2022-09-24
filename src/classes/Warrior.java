@@ -5,7 +5,4 @@ public class Warrior extends Character implements Attack {
         super(id, name, hp, isAlive);
     }
 
-    public void attack(){
-        System.out.println("Attack!");
-    }
 }
