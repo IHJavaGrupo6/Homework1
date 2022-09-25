@@ -1,12 +1,12 @@
 package classes;
 import java.util.Random;
 
-public class Warriors extends Character implements Attack{
+public class Warrior extends Character implements Attack{
     private int stamina;
     private int strength;
 
 
-    public Warriors(String name, int stamina, int strength){
+    public Warrior(String name, int stamina, int strength){
         super(name);
         setHp();
         setStamina();
@@ -39,5 +39,42 @@ public class Warriors extends Character implements Attack{
     Random rand = new Random();
     int hp = rand.nextInt(100,200);
     this.hp = hp;
+    }
+
+       public void decreaseHP(int damage){
+        this.hp -= damage;
+    }
+
+    //Decrease mana
+    public void decreaseStamina(){
+        this.stamina -= 5;
+    }
+
+    //Increase mana
+    public void increaseStamina(){
+        this.stamina ++;
+    }
+
+    public void attack() {
+        if (getStamina() >= 5) {
+            fireball();
+        } else staffHit();
+    }
+
+        public int fireball(){
+            int damage = this.stamina;
+            decreaseStamina();
+            return damage;
+        }
+
+        //Staffhit attack
+        public int staffHit(){
+            int damage = 2;
+            increaseStamina();
+            return damage;
+        }
+
+
+
     }
 }
