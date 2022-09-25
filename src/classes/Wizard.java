@@ -7,11 +7,13 @@ public class Wizard extends Character implements Attack{
     private int intelligence;
 
     //Constructor
-    public Wizard(String name) {
+    public Wizard(int id, String name) {
+        setId(id);
         setName(name);
         setHp();
         setMana();
         setIntelligence();
+        this.isAlive = true;
     }
 
     //Getter mana
@@ -58,6 +60,7 @@ public class Wizard extends Character implements Attack{
         if (getMana() >= 5){
             fireball();
         } else staffHit();
+
     }
 
     //Setter name
@@ -86,5 +89,12 @@ public class Wizard extends Character implements Attack{
         return damage;
     }
 
-
+    //Setter id
+    public void setId(int id) {
+        this.id = id;
+    }
+    //Getter id
+    public int getId() {
+        return id;
+    }
 }
