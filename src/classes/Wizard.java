@@ -2,18 +2,17 @@ package classes;
 
 import java.util.Random;
 
-public class Wizard extends Character implements Attack{
+public class Wizard extends Character{
     private int mana;
     private int intelligence;
 
     //Constructor
-    public Wizard(int id, String name) {
-        setId(id);
-        setName(name);
+    public Wizard(String name) {
+        super(name);
         setHp();
         setMana();
         setIntelligence();
-        this.isAlive = true;
+
     }
 
     //Getter mana
@@ -63,10 +62,7 @@ public class Wizard extends Character implements Attack{
 
     }
 
-    //Setter name
-    public void setName(String name){
-        this.name = name;
-    }
+
 
     //Setter hp
     public void setHp(){
@@ -74,6 +70,7 @@ public class Wizard extends Character implements Attack{
         int hp = rand.nextInt(50,100);
         this.hp = hp;
     }
+
 
     //Fireball attack
     public int fireball(){
@@ -89,12 +86,5 @@ public class Wizard extends Character implements Attack{
         return damage;
     }
 
-    //Setter id
-    public void setId(int id) {
-        this.id = id;
-    }
-    //Getter id
-    public int getId() {
-        return id;
-    }
+
 }
