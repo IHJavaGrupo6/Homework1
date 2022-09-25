@@ -4,12 +4,12 @@ import interfaces.Attack;
 
 public abstract class Character implements Attack {
 
-    private final int id = 0;
+    private static int id = 0;
     private String name;
     private int hp;
     private boolean isAlive;
 
-    public Character(int id, String name, int hp, boolean isAlive) {
+    public Character(String name) {
         this.id = id++;
         setName(name);
         setHp(hp);
