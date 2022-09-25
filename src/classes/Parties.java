@@ -1,6 +1,6 @@
 package classes;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -10,8 +10,12 @@ public class Parties {
 
 
 
-    //Constructor - Crea una party desde una lista de personajes
+    //Constructor - Crea una lista vacia
 
+    public Parties(){
+        party = Arrays.asList();
+    }
+    //Constructor - Crea una party desde una lista de personajes
     public Parties(List<Character> party) {
         setParty(party);
     }
