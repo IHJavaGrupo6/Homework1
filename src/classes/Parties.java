@@ -8,12 +8,18 @@ public class Parties {
     private List<Character> party;
     private List<Character> graveyard;
 
+    private boolean hasGraveyard;
+
 
 
     //Constructor - Crea una lista vacia
 
-    public Parties(){
-        party = Arrays.asList();
+    public Parties(boolean hasGraveyard){
+        if( hasGraveyard == false){
+            party = Arrays.asList();
+        }else {
+            graveyard = Arrays.asList();
+        }
     }
     //Constructor - Crea una party desde una lista de personajes
     public Parties(List<Character> party) {
@@ -36,14 +42,22 @@ public class Parties {
         graveyard.add(party.get(index));
         party.remove(index);
     }
-    //añade un personaje en la ultima posicion
-    public void addNewCharacter(Character character){
-        party.add(character);
+    //añade Warrior / Wizard en la ultima posicion,
+    // el metodo esta sobrecargado para que añada a un character en un determinado indice
+    public void addWarrior(Warrior warrior){
+        party.add(warrior);
     }
-    //el metodo esta sobrecargado para que añada a un character en un determinado indice
-    public void addNewCharacter(Character character,int index){
-        party.add(index,character);
+    public void addWarrior(Warrior warrior,int index){
+        party.add(index,warrior);
     }
+
+    public void addWizard(Wizard wizard){
+        party.add(wizard);
+    }
+    public void addWizard(Wizard wizard,int index){
+        party.add(index,wizard);
+    }
+
     //Quita el ultimo personaje en la lista
     public void removeCharacter(){
         int index = party.size() - 1;
