@@ -9,10 +9,15 @@ public class Wizard extends Character{
     //Constructor
     public Wizard(String name) {
         super(name);
-        setHp();
         setMana();
         setIntelligence();
 
+    }
+    public Wizard(String name, int hp, int mana, int intelligence){
+        super(name);
+        this.hp = hp;
+        this.mana = mana;
+        this.intelligence = intelligence;
     }
 
     //Getter mana
@@ -44,27 +49,20 @@ public class Wizard extends Character{
         this.hp -= damage;
     }
 
-    //Decrease mana
-    public void decreaseMana(){
-        this.mana -= 5;
-    }
 
-    //Increase mana
-    public void increaseMana(){
-        this.mana ++;
-    }
 
     //interface method attack
-    public void attack() {
+    public int attack() {
         if (getMana() >= 5){
-            fireball();
-        } else staffHit();
+            return fireball();
+        } else return staffHit();
 
     }
 
 
 
     //Setter hp
+    @Override
     public void setHp(){
         Random rand = new Random();
         int hp = rand.nextInt(50,100);
@@ -75,14 +73,14 @@ public class Wizard extends Character{
     //Fireball attack
     public int fireball(){
         int damage = this.intelligence;
-        decreaseMana();
+        this.mana = getMana() - 5;
         return damage;
     }
 
     //Staffhit attack
     public int staffHit(){
         int damage = 2;
-        increaseMana();
+        this.mana = getMana() + 1;
         return damage;
     }
 
