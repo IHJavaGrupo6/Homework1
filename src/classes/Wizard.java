@@ -44,12 +44,6 @@ public class Wizard extends Character{
         this.intelligence = intelligence;
     }
 
-    //Decrease HP
-    public void decreaseHP(int damage){
-        this.hp -= damage;
-    }
-
-
 
     //interface method attack
     public int attack() {
