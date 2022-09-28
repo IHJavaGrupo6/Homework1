@@ -1,47 +1,49 @@
 package classes;
 
+import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Battle {
 
-    private Parties parties = new Parties();
-    private Parties partyOne = parties.getPartyOne();
-    private Parties partyTwo = parties.getPartyTwo();
-    private Parties graveyard = parties.getGraveyard();
-    private Character playerOne;
-    private Character playerTwo;
+    private Parties parties;
 
     public Battle() {
-        //creando una party nueva para cada jugador
-        this.partyOne = new Parties();
-        this.partyTwo = new Parties();
-        this.graveyard = new Parties(); //una party vacia
+        parties = new Parties();
     }
 
-    public Battle(Parties partyOne, Parties partyTwo, Parties garveyard, Character playerOne, Character playerTwo) {
-        this.partyOne = parties.getPartyOne;
-        this.partyTwo = parties.getPartyTwo;
-        this.graveyard = parties.getGraveyard();
+    public Battle(List<Character> party1,List<Character> party2) {
+        parties = new Parties(party1, party2);
     }
 
 
     // round: attack while both of the players has hp
     public void battleRound(){
-        parties.getPlayerOne();
-        parties.getPlayerTwo();
-        while (playerOne.getHp() > 0 && playerTwo.getHp() > 0){
-            //method attack has to return int damage
-            int damagePlayerOne = playerOne.attack;
-            playerTwo.setHp(playerTwo.getHp() - damagePlayerOne);
-            int damagePlayerTwo = playerTwo.attack;
-            playerOne.setHp(playerOne.getHp() - damagePlayerTwo);
+        Scanner input = new Scanner(System.in);
+        System.out.println("Select player from party 1: ");
+        System.out.println(parties.getParty1().toString());
+        int index1 = input.nextInt();
+        input.nextLine();
+        Character player1 = parties.selectCharacter(parties.getParty1(), index1);
+
+        System.out.println("Select player from party 2: ");
+        System.out.println(parties.getParty2().toString());
+        int index2 = input.nextInt();
+        input.nextLine();
+        Character player2 = parties.selectCharacter(parties.getParty2(), index2);
+
+        while (player1.isAlive && player2.isAlive){
+            player1.decreaseHp(player2.attack());
+            player2.decreaseHp(player1.attack());
         }
-        if (playerOne.getHp() <= 0 ){
-            playerOne.moveToGraveyard();
-        } else if (playerTwo.getHp() <= 0) {
-            playerTwo.moveToGraveyard();
+
+        if (!player1.isAlive){
+            parties.moveToGraveyard(player1, parties.getParty1());
         }
-        parties.showGraveyard();
+        if (!player2.isAlive) {
+            parties.moveToGraveyard(player2, parties.getParty2());
+        }
+        System.out.println((parties.getGraveyard().toString()));
     }
 
     //attack tiene que devolver la cantidad de damage
