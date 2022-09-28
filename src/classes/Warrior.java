@@ -1,27 +1,32 @@
 package classes;
+
 import java.util.Random;
 
-public class Warrior extends Character implements Attack{
+public class Warrior extends Character {
     private int stamina;
     private int strength;
 
 
-    public Warrior(String name, int stamina, int strength){
+    public Warrior(String name) {
         super(name);
-        setHp();
         setStamina();
         setStrength();
+    }
 
-
+    public Warrior(String name, int hp, int stamina, int strength) {
+        super(name);
+        this.hp = hp;
+        this.stamina = stamina;
+        this.strength = strength;
     }
 
     public int getStamina() {
         return stamina;
     }
 
-    public void setStamina(int stamina) {
+    public void setStamina() {
         Random rand = new Random();
-        int stamina = rand.nextInt(10,50)
+        int stamina = rand.nextInt(10, 50);
         this.stamina = stamina;
     }
 
@@ -29,52 +34,39 @@ public class Warrior extends Character implements Attack{
         return strength;
     }
 
-    public void setStrength(int strength) {
+    public void setStrength() {
         Random rand = new Random();
-        int strength = rand.nextInt(1,10);
+        int strength = rand.nextInt(1, 10);
         this.strength = strength;
     }
 
-    public void setHp();
-    Random rand = new Random();
-    int hp = rand.nextInt(100,200);
-    this.hp = hp;
+    @Override
+    public void setHp() {
+        Random rand = new Random();
+        int hp = rand.nextInt(100, 200);
+        this.hp = hp;
     }
 
-       public void decreaseHP(int damage){
-        this.hp -= damage;
-    }
 
-    //Decrease mana
-    public void decreaseStamina(){
-        this.stamina -= 5;
-    }
-
-    //Increase mana
-    public void increaseStamina(){
-        this.stamina ++;
-    }
-
-    public void attack() {
+    public int attack() {
         if (getStamina() >= 5) {
-            fireball();
-        } else staffHit();
+           return heavyAttack();
+        } else return weakAttack();
     }
 
-        public int fireball(){
-            int damage = this.stamina;
-            decreaseStamina();
-            return damage;
-        }
-
-        //Staffhit attack
-        public int staffHit(){
-            int damage = 2;
-            increaseStamina();
-            return damage;
-        }
-
-
-
+    public int heavyAttack() {
+        int damage = this.strength;
+        this.stamina -= 5;
+        return damage;
     }
+
+
+    public int weakAttack() {
+        int damage = (this.strength/2);
+        this.stamina ++;
+        return damage;
+    }
+
+
+}
 }
