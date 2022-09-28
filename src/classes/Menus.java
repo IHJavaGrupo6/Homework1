@@ -57,7 +57,7 @@ public class Menus {
             case 1:
                 System.out.println("=Enter a name=");
                 String name = input.nextLine();
-                java.lang.Character character = new Warrior(name);
+                Character character = new Warrior(name);
                 addCharToParty(character);
                 break;
             case 2:
