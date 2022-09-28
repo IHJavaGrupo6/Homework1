@@ -4,15 +4,16 @@ import interfaces.Attack;
 
 public abstract class Character implements Attack {
 
-    private static int id = 0;
+    private int id;
+    private static int contador = 0;
     private String name;
     private int hp;
     private boolean isAlive;
 
     public Character(String name) {
-        this.id = id++;
+        this.id = contador++;
         setName(name);
-        setHp(hp);
+        setHp();
         setAlive(true);
     }
 
@@ -32,8 +33,7 @@ public abstract class Character implements Attack {
         return hp;
     }
 
-    public void setHp(int hp) {
-
+    public void setHp() {
     }
 
     public boolean isAlive() {
