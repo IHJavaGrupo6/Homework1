@@ -1,12 +1,13 @@
 package classes;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Parties {
     private List<Character> party;
-    private List<Character> graveyard;
+    private static List<Character> graveyard;
 
     private boolean hasGraveyard;
 
@@ -16,9 +17,9 @@ public class Parties {
 
     public Parties(boolean hasGraveyard){
         if( hasGraveyard == false){
-            party = Arrays.asList();
+            this.party = new ArrayList<>();
         }else {
-            graveyard = Arrays.asList();
+            this.graveyard = new ArrayList<>();
         }
     }
     //Constructor - Crea una party desde una lista de personajes
