@@ -1,12 +1,16 @@
 <<<<<<< HEAD
+import classes.Battle;
+=======
+<<<<<<< HEAD
 import classes.Menus;
 
 import java.awt.*;
 import java.util.Scanner;
 =======
+>>>>>>> 237338a643aeebf744228434f2ce88d2623af831
 import classes.Character;
 import classes.Parties;
-import classes.Warrior;
+import classes.Warriors;
 import classes.Wizard;
 
 import java.util.ArrayList;
