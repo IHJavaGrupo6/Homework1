@@ -6,27 +6,50 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Parties {
-    private List<Character> party;
-    private static List<Character> graveyard;
+    private List<Character> party1;
+    private List<Character> party2;
 
-    private boolean hasGraveyard;
+    private  List<Character> graveyard;
 
 
 
-    //Constructor - Crea una lista vacia
 
-    public Parties(boolean hasGraveyard){
-        if( hasGraveyard == false){
-            this.party = new ArrayList<>();
-        }else {
-            this.graveyard = new ArrayList<>();
-        }
+
+    public Parties() {
+        this.party1 = new ArrayList<>();
+        this.party2 = new ArrayList<>();
+        this.graveyard = new ArrayList<>();
     }
+
+    public Parties(List<Character> party1,List<Character> party2 ) {
+        setParty1(party1);
+        setParty2(party2);
+        this.graveyard = new ArrayList<>();
+    }
+
+    public List<Character> getParty1() {
+        return party1;
+    }
+
+    public void setParty1(List<Character> party1) {
+        this.party1 = party1;
+    }
+
+    public List<Character> getParty2() {
+        return party2;
+    }
+
+    public void setParty2(List<Character> party2) {
+        this.party2 = party2;
+    }
+    public List<Character> getGraveyard() {
+        return graveyard;
+    }
+
+
     //Constructor - Crea una party desde una lista de personajes
-    public Parties(List<Character> party) {
-        setParty(party);
-    }
-    //Genera una party aleatoria entre 10 y 20
+
+    /*//Genera una party aleatoria entre 10 y 20
     public List<Character> generateParty(){
        int lengthParty = ThreadLocalRandom.current().nextInt(10,20);
         for (int i = 0; i < lengthParty; i++) {
@@ -38,45 +61,22 @@ public class Parties {
         }
         return party;
     }
+    */
     //Quita al personaje selecionado a la lista graveyard
-    public void moveToGraveyard(int index){
-        graveyard.add(party.get(index));
-        party.remove(index);
-    }
-    //añade Warrior / Wizard en la ultima posicion,
-    // el metodo esta sobrecargado para que añada a un character en un determinado indice
-    public void addWarrior(Warrior warrior){
-        party.add(warrior);
-    }
-    public void addWarrior(Warrior warrior,int index){
-        party.add(index,warrior);
+    public void moveToGraveyard(Character character,List<Character> party){
+
+        graveyard.add(character);
+        party.remove(character);
     }
 
-    public void addWizard(Wizard wizard){
-        party.add(wizard);
-    }
-    public void addWizard(Wizard wizard,int index){
-        party.add(index,wizard);
+    // el metodo añade a un character en un determinado indice
+    public void addCharacterParty(Character character, List<Character> party){
+        party.add(character);
     }
 
-    //Quita el ultimo personaje en la lista
-    public void removeCharacter(){
-        int index = party.size() - 1;
-        party.remove(index);
+    public Character selectCharacter(List<Character> party,int index){
+        return party.get(index);
     }
-    //El metodo esta sobrecargado para quitar a un personaje de un indice.
-    public void removeCharacter(int index){
-        party.remove(index);
-    }
-    //getter
-    public List<Character> getGraveyard() {
-        return graveyard;
-    }
-    public List<Character> getParty() {
-        return party;
-    }
-    //Setter
-    public void setParty(List<Character> party) {
-        this.party = party;
-    }
+
+
 }
