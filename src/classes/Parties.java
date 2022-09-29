@@ -45,9 +45,7 @@ public class Parties {
     }
 
 
-    //Constructor - Crea una party desde una lista de personajes
-
-    //Genera una party aleatoria entre 5 y 10
+    // generates two random parties of 5 to 10 characters
     public static void generateParty() {
         Random random = new Random();
         int lengthParty = random.nextInt(5, 10);
@@ -62,18 +60,19 @@ public class Parties {
         }
     }
 
-    //Quita al personaje selecionado a la lista graveyard
+    // moves killed character to graveyard
     public void moveToGraveyard(Character character, List<Character> party) {
 
         graveyard.add(character);
         party.remove(character);
     }
 
-    // el metodo añade a un character en un determinado indice
+    // method for adding a character to one of the parties
     public static void addCharacterParty(Character character, List<Character> party) {
         party.add(character);
     }
 
+    // method for picking a character for the round
     public Character selectCharacter(List<Character> party, int index) {
         return party.get(index);
     }
