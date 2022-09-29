@@ -32,15 +32,15 @@ public class Battle {
         input.nextLine();
         Character player2 = parties.selectCharacter(parties.getParty2(), index2);
 
-        while (player1.isAlive && player2.isAlive){
+        while (player1.isAlive() && player2.isAlive()){
             player1.decreaseHp(player2.attack());
             player2.decreaseHp(player1.attack());
         }
 
-        if (!player1.isAlive){
+        if (!player1.isAlive()){
             parties.moveToGraveyard(player1, parties.getParty1());
         }
-        if (!player2.isAlive) {
+        if (!player2.isAlive()) {
             parties.moveToGraveyard(player2, parties.getParty2());
         }
         System.out.println((parties.getGraveyard().toString()));
