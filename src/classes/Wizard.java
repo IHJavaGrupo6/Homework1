@@ -79,13 +79,7 @@ public class Wizard extends Character{
     }
     @Override
     public String toString() {
-        return "Wizard{" +
-                "name='" + getName() +
-                ", id=" + getId() +
-                ", hp=" + hp +
-                ", mana=" + mana +
-                ", intelligence=" + intelligence + '\'' +
-                '}'+"\n";
+        return "Wizard: name = " + getName() + ", id = " + getId() + ", hp = " + hp + ", mana = " + mana + ", intelligence = " + intelligence + ";\n";
     }
 
 }

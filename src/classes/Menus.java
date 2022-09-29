@@ -21,7 +21,7 @@ public class Menus {
         System.out.println("===Welcome to Renegados RPG Battle===");
         System.out.println("=Select an option=");
         System.out.println("1. Create a Character");
-        System.out.println("2. Generate random parties");
+        System.out.println("2. Generate random Parties");
         System.out.println("3. Import parties from CSV files");
         System.out.println("4. Go to Battle");
         System.out.println("5. Exit Game");
@@ -65,7 +65,7 @@ public class Menus {
         input.nextLine();
         switch (option) {
             case 1:
-                System.out.println("=Enter a name=");
+                System.out.println("=Enter warrior's name=");
                 String name = input.nextLine();
                 System.out.println("=Enter warrior's hp=");
                 int hp = input.nextInt();
@@ -74,11 +74,11 @@ public class Menus {
                 System.out.println("=Enter warrior's strength=");
                 int strength = input.nextInt();
                 Character character = new Warrior(name, hp, stamina, strength);
+                System.out.println("Created Warrior " + character.getName());
                 addCharToParty(character);
-                System.out.println("Character added: " + character.getName()); //?????????????????????
                 break;
             case 2:
-                System.out.println("=Enter a name=");
+                System.out.println("=Enter wizard's name=");
                 String name2 = input.nextLine();
                 System.out.println("=Enter wizard's hp=");
                 int hp2 = input.nextInt();
@@ -87,8 +87,8 @@ public class Menus {
                 System.out.println("=Enter wizard's intelligence=");
                 int intelligence = input.nextInt();
                 Character character2 = new Wizard(name2, hp2, mana, intelligence);
+                System.out.println("Created Wizard " + character2.getName());
                 addCharToParty(character2);
-                System.out.println("Character added: " + character2.getName()); //?????????????????????
                 break;
             default:
                 System.err.println("Incorrect option");
@@ -107,11 +107,11 @@ public class Menus {
         switch (option) {
             case 1:
                 Parties.addCharacterParty(character, Parties.getParty1());
-                System.out.println("==Character added to Party1");
+                System.out.println("Character " + character.getName() + " added to Party1");
                 break;
             case 2:
                 Parties.addCharacterParty(character, Parties.getParty2());
-                System.out.println("==Character added to Party2");
+                System.out.println("Character " + character.getName() + " added to Party2");
                 break;
             default:
                 System.err.println("Incorrect option");
