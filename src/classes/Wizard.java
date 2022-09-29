@@ -77,6 +77,15 @@ public class Wizard extends Character{
         this.mana = getMana() + 1;
         return damage;
     }
-
+    @Override
+    public String toString() {
+        return "Wizard{" +
+                "name='" + getName() +
+                ", id=" + getId() +
+                ", hp=" + hp +
+                ", mana=" + mana +
+                ", intelligence=" + intelligence + '\'' +
+                '}'+"\n";
+    }
 
 }
