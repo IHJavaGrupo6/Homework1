@@ -2,6 +2,8 @@ package classes;
 
 import java.util.Scanner;
 
+import static classes.ReadFromCSV.readParties;
+
 public class Menus {
     private Battle battle;
 
@@ -16,12 +18,13 @@ public class Menus {
 
     public void menuInicial() {
 
-        System.out.println("===Welcome to our RPG Game===");
+        System.out.println("===Welcome to Renegados RPG Battle===");
         System.out.println("=Select an option=");
         System.out.println("1. Create a Character");
         System.out.println("2. Generate random parties");
-        System.out.println("3. Go to Battle");
-        System.out.println("4. Exit Game");
+        System.out.println("3. Import parties from CSV files");
+        System.out.println("4. Go to Battle");
+        System.out.println("5. Exit Game");
 
         Scanner input = new Scanner(System.in);
         int option = input.nextInt();
@@ -34,11 +37,14 @@ public class Menus {
                 Parties.generateParty();
                 menuInicial();
             case 3:
+                readParties();
+                menuInicial();
+            case 4:
                 while (Parties.getParty1().size() > 0 && Parties.getParty2().size() > 0) {
                     getBattle().battleRound();
                 }
                 menuInicial();
-            case 4:
+            case 5:
                 System.out.println("Exiting game");
                 System.exit(0);
             default:
