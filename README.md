@@ -44,7 +44,7 @@ Ejemplo de luchador derrotado:
 Anya is dead now. Moved to Graveyard.
 
 Graveyard:
-* Wizard{name='Anya, id=2, hp=-1, mana=6, intelligence=12'}
+* Warrior: name = Anya, id = 2, hp = -8, stamina = 0, strength = 9;
 
 
 Las rondas se van a repetir hasta que una party se quede sin luchadores vivos.
@@ -56,23 +56,21 @@ de la party ganadora.
 Ejemplo de cementerio final y party ganadora:
 
 Graveyard:
-* Wizard{name='Anya, id=2, hp=-1, mana=6, intelligence=12'}
-* Wizard{name='Armando, id=0, hp=-6, mana=17, intelligence=48'}
-* Wizard{name='Irina, id=1, hp=-17, mana=26, intelligence=29'}
-* Wizard{name='Piero, id=3, hp=0, mana=0, intelligence=10'}
-* Warrior{name='Clàudia, id=5, hp=-3, stamina=5, strength=1'}
-* Warrior{name='Pol, id=4, hp=-27, stamina=2, strength=6'}
-* Wizard{name='Armando, id=7, hp=-17, mana=1, intelligence=24'}
-* Wizard{name='Javi, id=6, hp=0, mana=4, intelligence=19'}
-* Wizard{name='Ingrid, id=9, hp=-23, mana=5, intelligence=3'}
-* Warrior{name='Sergi, id=11, hp=-60, stamina=3, strength=9'}
-* Wizard{name='Oxana, id=8, hp=0, mana=1, intelligence=31'}
-* Warrior{name='Ingrid, id=13, hp=0, stamina=2, strength=4'}
-* Warrior{name='Diana, id=10, hp=-5, stamina=5, strength=4'}
-* Wizard{name='Nil, id=15, hp=0, mana=5, intelligence=9'}
-* Warrior{name='Fran, id=12, hp=-43, stamina=3, strength=2'}
-* Wizard{name='Ale, id=14, hp=-14, mana=31, intelligence=29'}
-* Wizard{name='Quim, id=17, hp=-16, mana=4, intelligence=33'}
+* Wizard: name = Chloe, id = 0, hp = -27, mana = 10, intelligence = 37;
+* Wizard: name = Miguel, id = 1, hp = -4, mana = 25, intelligence = 47;
+* Warrior: name = Anya, id = 2, hp = -8, stamina = 0, strength = 9;
+* Warrior: name = Oxana, id = 3, hp = -10, stamina = 3, strength = 8;
+* Wizard: name = Anya Jr, id = 4, hp = -38, mana = 2, intelligence = 13;
+* Wizard: name = Alfonso, id = 6, hp = -50, mana = 18, intelligence = 28;
+* Wizard: name = Chloe Jr, id = 5, hp = -55, mana = 15, intelligence = 26;
+* Warrior: name = Núria, id = 8, hp = -52, stamina = 0, strength = 1;
+* Wizard: name = Asaf, id = 7, hp = -12, mana = 5, intelligence = 34;
+* Warrior: name = Javi, id = 10, hp = -6, stamina = 1, strength = 9;
+* Warrior: name = Nil, id = 9, hp = -4, stamina = 6, strength = 6;
+* Warrior: name = Ale, id = 11, hp = -7, stamina = 2, strength = 6;
+* Wizard: name = Armando, id = 12, hp = -43, mana = 3, intelligence = 39;
+* Wizard: name = Ingrid, id = 13, hp = -8, mana = 1, intelligence = 23;
+* Warrior: name = Martin, id = 15, hp = -3, stamina = 1, strength = 3;
 
 Party 1 is the winner!
 

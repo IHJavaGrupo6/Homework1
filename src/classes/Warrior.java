@@ -68,14 +68,6 @@ public class Warrior extends Character {
     }
     @Override
     public String toString() {
-        return "Warrior{" +
-                "name='" + getName() +
-                ", id=" + getId() +
-                ", hp=" + hp +
-                ", stamina=" + stamina +
-                ", strength=" + strength + '\'' +
-                '}'+"\n";
+        return "Warrior: name = " + getName() + ", id = " + getId() + ", hp = " + hp + ", stamina = " + stamina + ", strength = " + strength + ";\n";
     }
-
-
 }
