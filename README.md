@@ -19,7 +19,7 @@ nos permite generar un combatiente customizado. Podrás elegir entre Wizard o Wa
 que cuentan cada uno con atributos especiales.
 
 -Si seleccionamos la opción "2" se nos van a generar las dos parties 
-de manera aleatoria.
+de manera aleatoria, si algún nombre se repite, se le añadirá Jr al final.
 
 -Si seleccionamos la opción "3" se nos va a importar un archivo CSV que
 contiene las parties ya predefinidas.
