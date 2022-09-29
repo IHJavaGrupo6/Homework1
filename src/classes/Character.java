@@ -2,6 +2,8 @@ package classes;
 
 import interfaces.Attack;
 
+import java.util.Random;
+
 public abstract class Character implements Attack {
 
     private int id;
@@ -13,6 +15,12 @@ public abstract class Character implements Attack {
     public Character(String name) {
         this.id = contador++;
         setName(name);
+        setHp();
+        setAlive(true);
+    }
+    public Character() {
+        this.id = contador++;
+        setName();
         setHp();
         setAlive(true);
     }
@@ -51,5 +59,15 @@ public abstract class Character implements Attack {
         if (getHp() <= 0) {
             this.isAlive = false;
         }
+    }
+    public void setName() {
+        String[] randomNames = {"Danny", "Quim", "Anya", "Oscar", "Irina", "Ale", "Jose", "Jaume", "Chloe", "Alfonso", "Armando", "Asaf",
+                "Cinta", "Clàudia", "Diana", "Espe", "Fran", "Ingrid", "Javi", "Kenny", "Lili", "Martin", "Max", "Miguel", "Nil", "Núria",
+                "Oxana", "Piero", "Pol", "Ricardo", "Sergi", "Soledad", "Veronika", "Yehosua", "Alberto"};
+
+        Random random = new Random();
+        int index = random.nextInt(0, randomNames.length - 1);
+
+        this.name = randomNames[index];
     }
 }

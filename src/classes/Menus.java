@@ -3,7 +3,7 @@ package classes;
 import java.util.Scanner;
 
 public class Menus {
-        private Battle battle;
+    private Battle battle;
 
     public Menus() {
         this.battle = new Battle();
@@ -14,27 +14,31 @@ public class Menus {
     }
 
 
-    public void menuInicial(){
+    public void menuInicial() {
 
         System.out.println("===Welcome to our RPG Game===");
         System.out.println("=Select an option=");
         System.out.println("1. Create a Character");
-        System.out.println("2. Go to Battle");
-        System.out.println("3. Exit Game");
+        System.out.println("2. Generate random parties");
+        System.out.println("3. Go to Battle");
+        System.out.println("4. Exit Game");
 
         Scanner input = new Scanner(System.in);
         int option = input.nextInt();
         input.nextLine();
-        switch (option){
+        switch (option) {
             case 1:
                 characterCreation();
                 menuInicial();
             case 2:
-                while(Parties.getParty1().size() > 0 && Parties.getParty2().size() > 0){
+                Parties.generateParty();
+                menuInicial();
+            case 3:
+                while (Parties.getParty1().size() > 0 && Parties.getParty2().size() > 0) {
                     getBattle().battleRound();
                 }
                 menuInicial();
-            case 3:
+            case 4:
                 System.out.println("Exiting game");
                 System.exit(0);
             default:
@@ -45,7 +49,7 @@ public class Menus {
 
     }
 
-    public static void characterCreation(){
+    public static void characterCreation() {
         Scanner input = new Scanner(System.in);
         System.out.println("=Choose a character type=");
         System.out.println("1. Warrior");
@@ -53,26 +57,40 @@ public class Menus {
 
         int option = input.nextInt();
         input.nextLine();
-        switch (option){
+        switch (option) {
             case 1:
                 System.out.println("=Enter a name=");
                 String name = input.nextLine();
-                Character character = new Warrior(name);
+                System.out.println("=Enter warrior's hp=");
+                int hp = input.nextInt();
+                System.out.println("=Enter warrior's stamina=");
+                int stamina = input.nextInt();
+                System.out.println("=Enter warrior's strength=");
+                int strength = input.nextInt();
+                Character character = new Warrior(name, hp, stamina, strength);
                 addCharToParty(character);
+                System.out.println("Character added: " + character.getName()); //?????????????????????
                 break;
             case 2:
                 System.out.println("=Enter a name=");
                 String name2 = input.nextLine();
-                Character character2 = new Wizard(name2);
+                System.out.println("=Enter wizard's hp=");
+                int hp2 = input.nextInt();
+                System.out.println("=Enter wizard's mana=");
+                int mana = input.nextInt();
+                System.out.println("=Enter wizard's intelligence=");
+                int intelligence = input.nextInt();
+                Character character2 = new Wizard(name2, hp2, mana, intelligence);
                 addCharToParty(character2);
+                System.out.println("Character added: " + character2.getName()); //?????????????????????
                 break;
             default:
                 System.err.println("Incorrect option");
                 characterCreation();
-
         }
     }
-    public static void addCharToParty(Character character){
+
+    public static void addCharToParty(Character character) {
         Scanner input = new Scanner(System.in);
         System.out.println("=Choose to which party you want to add the character=");
         System.out.println("1. Party1");
@@ -80,7 +98,7 @@ public class Menus {
 
         int option = input.nextInt();
         input.nextLine();
-        switch (option){
+        switch (option) {
             case 1:
                 Parties.addCharacterParty(character, Parties.getParty1());
                 System.out.println("==Character added to Party1");
