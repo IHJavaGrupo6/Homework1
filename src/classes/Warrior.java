@@ -66,7 +66,16 @@ public class Warrior extends Character {
         this.stamina ++;
         return damage;
     }
+    @Override
+    public String toString() {
+        return "Warrior{" +
+                "name='" + getName() +
+                ", id=" + getId() +
+                ", hp=" + hp +
+                ", stamina=" + stamina +
+                ", strength=" + strength + '\'' +
+                '}'+"\n";
+    }
 
 
-}
 }

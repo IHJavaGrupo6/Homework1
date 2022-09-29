@@ -7,7 +7,7 @@ public abstract class Character implements Attack {
     private int id;
     private static int contador = 0;
     private String name;
-    private int hp;
+    protected int hp;
     private boolean isAlive;
 
     public Character(String name) {
@@ -44,7 +44,7 @@ public abstract class Character implements Attack {
         isAlive = alive;
     }
 
-    public abstract void attack();
+    public abstract int attack();
 
     public void decreaseHp(int damage) {
         this.hp -= damage;
