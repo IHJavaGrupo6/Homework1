@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Parties {
-    private List<Character> party1;
-    private List<Character> party2;
+    private static List<Character> party1;
+    private static List<Character> party2;
 
     private  List<Character> graveyard;
 
@@ -27,7 +27,7 @@ public class Parties {
         this.graveyard = new ArrayList<>();
     }
 
-    public List<Character> getParty1() {
+    public static List<Character> getParty1() {
         return party1;
     }
 
@@ -35,7 +35,7 @@ public class Parties {
         this.party1 = party1;
     }
 
-    public List<Character> getParty2() {
+    public static List<Character> getParty2() {
         return party2;
     }
 
@@ -70,7 +70,7 @@ public class Parties {
     }
 
     // el metodo añade a un character en un determinado indice
-    public void addCharacterParty(Character character, List<Character> party){
+    public static void addCharacterParty(Character character, List<Character> party){
         party.add(character);
     }
 

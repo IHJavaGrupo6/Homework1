@@ -9,7 +9,7 @@ public class Menus {
         this.battle = new Battle();
     }
 
-    public static Battle getBattle() {
+    public Battle getBattle() {
         return battle;
     }
 
@@ -30,7 +30,7 @@ public class Menus {
                 characterCreation();
                 menuInicial();
             case 2:
-                while(getBattle().parties.getParty1().size() > 0 && getBattle().parties.getParty2.size() > 0){
+                while(Parties.getParty1().size() > 0 && Parties.getParty2().size() > 0){
                     getBattle().battleRound();
                 }
                 menuInicial();
@@ -57,14 +57,14 @@ public class Menus {
             case 1:
                 System.out.println("=Enter a name=");
                 String name = input.nextLine();
-                java.lang.Character character = new Warrior(name);
+                Character character = new Warrior(name);
                 addCharToParty(character);
                 break;
             case 2:
                 System.out.println("=Enter a name=");
-                String name = input.nextLine();
-                java.lang.Character character = new Wizard(name);
-                addCharToParty(character);
+                String name2 = input.nextLine();
+                Character character2 = new Wizard(name2);
+                addCharToParty(character2);
                 break;
             default:
                 System.err.println("Incorrect option");
@@ -82,11 +82,11 @@ public class Menus {
         input.nextLine();
         switch (option){
             case 1:
-                getBattle().parties.addCharacterParty(character, getBattle().getParty1());
+                Parties.addCharacterParty(character, Parties.getParty1());
                 System.out.println("==Character added to Party1");
                 break;
             case 2:
-                getBattle().parties.addCharacterParty(character, getBattle().getParty2());
+                Parties.addCharacterParty(character, Parties.getParty2());
                 System.out.println("==Character added to Party2");
                 break;
             default:
