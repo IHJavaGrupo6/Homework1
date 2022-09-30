@@ -22,7 +22,7 @@ que cuentan cada uno con atributos especiales.
 de manera aleatoria, si algún nombre se repite, se le añadirá Jr al final.
 
 -Si seleccionamos la opción "3" se nos va a importar un archivo CSV que
-contiene las parties ya predefinidas.
+contiene los luchadores ya predefinidos, se añadira la mitad a la party 1 y otra mitad a la party 2.
 
 -Si seleccionamos la opción "4" dará comienzo el combate entre las dos parties.
 Esto nos va a dar la opción de escoger un personaje de cada party para cada ronda.
