@@ -59,9 +59,9 @@ public abstract class Character implements Attack {
     public abstract int attack();
 
     public void decreaseHp(int damage) {
-        this.hp -= damage;
+        this.hp = getHp() - damage;
         if (getHp() <= 0) {
-            this.isAlive = false;
+            setAlive(false);
         }
     }
 

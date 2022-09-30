@@ -37,8 +37,7 @@ public class Battle {
 
         while (player1.isAlive() && player2.isAlive()) {
 
-            player1.decreaseHp(player2.attack());
-            player2.decreaseHp(player1.attack());
+
 
             int damage1 = player2.attack();
             player1.decreaseHp(damage1);
