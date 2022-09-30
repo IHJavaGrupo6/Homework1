@@ -58,6 +58,10 @@ public class Parties {
                 party2.add(new Wizard());
             }
         }
+        System.out.println("Created two parties!");
+        System.out.println("Party 1: \n" + party1.toString());
+        System.out.println("Party 2: \n" + party2.toString());
+        System.out.println("Ready to battle!");
     }
 
     // moves killed character to graveyard

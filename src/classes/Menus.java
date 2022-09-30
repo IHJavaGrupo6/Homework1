@@ -67,11 +67,11 @@ public class Menus {
             case 1:
                 System.out.println("=Enter warrior's name=");
                 String name = input.nextLine();
-                System.out.println("=Enter warrior's hp=");
+                System.out.println("=Enter warrior's hp (between 100 and 200)=");
                 int hp = input.nextInt();
-                System.out.println("=Enter warrior's stamina=");
+                System.out.println("=Enter warrior's stamina (between 10 and 50)=");
                 int stamina = input.nextInt();
-                System.out.println("=Enter warrior's strength=");
+                System.out.println("=Enter warrior's strength (between 1 and 10)=");
                 int strength = input.nextInt();
                 Character character = new Warrior(name, hp, stamina, strength);
                 System.out.println("Created Warrior " + character.getName());
@@ -80,11 +80,11 @@ public class Menus {
             case 2:
                 System.out.println("=Enter wizard's name=");
                 String name2 = input.nextLine();
-                System.out.println("=Enter wizard's hp=");
+                System.out.println("=Enter wizard's hp (between 50 and 100)=");
                 int hp2 = input.nextInt();
-                System.out.println("=Enter wizard's mana=");
+                System.out.println("=Enter wizard's mana (between 10 and 50)=");
                 int mana = input.nextInt();
-                System.out.println("=Enter wizard's intelligence=");
+                System.out.println("=Enter wizard's intelligence (between 1 and 50)=");
                 int intelligence = input.nextInt();
                 Character character2 = new Wizard(name2, hp2, mana, intelligence);
                 System.out.println("Created Wizard " + character2.getName());
